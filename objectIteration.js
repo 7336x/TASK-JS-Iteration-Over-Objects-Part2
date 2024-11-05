@@ -87,15 +87,12 @@ function countCourses(student) {
 // removes the `course` from the student's courses array,
 // then returns the `student` object.
 function removeCourseFromStudent(student, course) {
-   // Find the index of the course in the student's courses array
-   const index = student.courses.indexOf(course); // am searching for a method  to search for a specific value  in this case its indexOf is a built-in method for arrays in JavaScript.
-   //  i say here If the course exists in the array, remove it
-   if (index !== -1) { // The method returns the first index at which the specified value can be found in the array.
-     student.courses.splice(index, 1); //If the value is not found, it returns -1.
-   }
-   // Return the updated student object
-   return student;
-}
+    // Filter out the course from the student's courses array
+    student.courses = student.courses.filter(c => c !== course);
+  
+    // Return the updated student object
+    return student;
+  }
  console.log(removeCourseFromStudent(students[6], "Science"));
 
 // 6) Write a `findStudentById` function that accepts a `studentId` and an array of student objects `students`
