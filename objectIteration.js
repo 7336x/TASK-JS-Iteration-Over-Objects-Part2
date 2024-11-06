@@ -90,7 +90,7 @@ function removeCourseFromStudent(student, course) {
     // Filter out the course from the student's courses array
     student.courses = student.courses.filter(c => c !== course);
   
-    // Return the updated student object
+    // Return the updated student object//
     return student;
   }
  console.log(removeCourseFromStudent(students[6], "Science"));
